@@ -5,6 +5,8 @@
           if (numberButtons <= 0) {
             alert("Please write another number");
             return false;
+          } else if (numberButtons == 1) {
+            alert("It's too hard!");
           } else {
             var random = Math.floor(Math.random() * numberButtons) + 1;
             for (var i = 1; i <= numberButtons; i++) {
