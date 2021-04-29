@@ -5,9 +5,10 @@
           var numberButtons = parseInt(text);
           if (numberButtons <= 0) {
             alert("Please write another number");
-            return false;
+            restartGame();
           } else if (numberButtons == 1) {
             alert("It's too hard!");
+            restartGame();
           } else {
             random = Math.floor(Math.random() * numberButtons) + 1;
             for (var i = 1; i <= numberButtons; i++) {
