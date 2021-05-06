@@ -5,12 +5,10 @@ function addButtons() {
   var numberButtons = parseInt(text);
   if (numberButtons <= 0) {
     document.getElementById("status").style.color = "red";
-    document.getElementById("status").innerHTML = "Please write another number";
-    restartGame();
+    document.getElementById("status").innerHTML = "Status: Please restart and write another number!";
   } else if (numberButtons == 1) {
     document.getElementById("status").style.color = "red";
-    document.getElementById("status").innerHTML = "It's too hard!";
-    restartGame();
+    document.getElementById("status").innerHTML = "Status: It's too hard! Please restart!";
   } else {
     random = Math.floor(Math.random() * numberButtons) + 1;
     for (var i = 1; i <= numberButtons; i++) {
