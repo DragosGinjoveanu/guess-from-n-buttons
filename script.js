@@ -4,10 +4,12 @@ function addButtons() {
   var text = document.getElementById("myText").value;
   var numberButtons = parseInt(text);
   if (numberButtons <= 0) {
-    alert("Please write another number");
+    document.getElementById("status").style.color = "red";
+    document.getElementById("status").innerHTML = "Please write another number";
     restartGame();
   } else if (numberButtons == 1) {
-    alert("It's too hard!");
+    document.getElementById("status").style.color = "red";
+    document.getElementById("status").innerHTML = "It's too hard!";
     restartGame();
   } else {
     random = Math.floor(Math.random() * numberButtons) + 1;
