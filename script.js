@@ -1,8 +1,8 @@
-var random;
+var winningButton;
 // this function adds the given number of buttons and picks a random number between 1 and it
 function addButtons() {
-  var text = document.getElementById("myText").value;
-  var numberButtons = parseInt(text);
+  var numberOfButtons = document.getElementById("numberOfButtons").value;
+  var numberButtons = parseInt(numberOfButtons);
   if (numberButtons <= 0) {
     document.getElementById("status").style.color = "red";
     document.getElementById("status").innerHTML = "Status: Please restart and write another number!";
@@ -10,7 +10,7 @@ function addButtons() {
     document.getElementById("status").style.color = "red";
     document.getElementById("status").innerHTML = "Status: It's too hard! Please restart!";
   } else {
-    random = Math.floor(Math.random() * numberButtons) + 1;
+    winningButton = Math.floor(Math.random() * numberButtons) + 1;
     for (var i = 1; i <= numberButtons; i++) {
       $('#buttons').append(`
         <button type="button" id = "` + i + `" class="btn btn-secondary btn-lg" onclick = "return guessButton(` + i + `);">Button: ` + i + `</button>
@@ -21,7 +21,7 @@ function addButtons() {
 }
 // this function verifies if the clicked button is winner or not
 function guessButton(id) {
-  if (id == random) {
+  if (id == winningButton) {
     document.getElementById("status").style.color = "green";
     document.getElementById("status").innerHTML = "Status: Winner!!!";
   } else {
